@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  admin: false
+  email: MyString
+  days_in_week: MyString
+
+two:
+  username: MyString
+  password: MyString
+  admin: false
+  email: MyString
+  days_in_week: MyString
