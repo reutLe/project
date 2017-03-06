@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Goals:</strong>
+  <%= @activity.goals %>
+</p>
+
+<p>
+  <strong>Ages:</strong>
+  <%= @activity.ages %>
+</p>
+
+<p>
+  <strong>Act kind:</strong>
+  <%= @activity.act_kind %>
+</p>
+
+<p>
+  <strong>Act description:</strong>
+  <%= @activity.act_description %>
+</p>
+
+<p>
+  <strong>Openning game:</strong>
+  <%= @activity.openning_game %>
+</p>
+
+<p>
+  <strong>Methods:</strong>
+  <%= @activity.methods %>
+</p>
+
+<p>
+  <strong>Accessories:</strong>
+  <%= @activity.accessories %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

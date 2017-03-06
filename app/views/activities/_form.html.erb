@@ -1,0 +1,57 @@
+<%= form_for(activity) do |f| %>
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goals %>
+    <%= f.text_field :goals %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ages %>
+    <%= f.text_field :ages %>
+  </div>
+
+  <div class="field">
+    <%= f.label :act_kind %>
+    <%= f.text_field :act_kind %>
+  </div>
+
+  <div class="field">
+    <%= f.label :act_description %>
+    <%= f.text_field :act_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :openning_game %>
+    <%= f.text_field :openning_game %>
+  </div>
+
+  <div class="field">
+    <%= f.label :methods %>
+    <%= f.text_field :methods %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accessories %>
+    <%= f.text_field :accessories %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
