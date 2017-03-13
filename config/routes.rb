@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subscribes
   resources :activities
   resources :users do
   collection do

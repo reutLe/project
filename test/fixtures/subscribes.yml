@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  activity: one
+  chosen_date: 2017-03-06
+
+two:
+  user: two
+  activity: two
+  chosen_date: 2017-03-06
