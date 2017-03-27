@@ -28,7 +28,7 @@ class SubscribesController < ApplicationController
   #  subscribe_params[:activity_id] = Activity.find_by_name(subscribe_params[:activity_id]).id
   #  subscribe_params[:user_id] = User.find_by_username(subscribe_params[:user_id]).id
     @subscribe = Subscribe.new(subscribe_params)
-binding.pry
+    
     respond_to do |format|
       if @subscribe.save
         format.html { redirect_to @subscribe, notice: 'Subscribe was successfully created.' }
