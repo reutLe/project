@@ -27,9 +27,11 @@ class UsersController < ApplicationController
           session[:login] = @user.id
           redirect_to @user, notice: 'User was successfully logged in.'
         end
-      else
-        render :login , notice: "Username or password isn't correct"
-      end
+        else
+        #render :login , notice: "Username or password isn't correct"
+          flash[:notice] = "Invalid username/password combination" if params[:email] || params[:password]
+          redirect_to login_users_path
+        end
     else
       @user = User.new
     end

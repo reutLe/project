@@ -25,7 +25,8 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
-
+    @activity.user_id = session[:login]
+    binding.pry
     respond_to do |format|
       if @activity.save
         format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
@@ -69,6 +70,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:name, :goals, :ages, :act_kind, :act_description, :openning_game, :methods, :accessories)
+      params.require(:activity).permit(:name, :goals, :act_kind, :act_description, :openning_game, :methods, :image, :accessories,  :ages => [])
     end
 end

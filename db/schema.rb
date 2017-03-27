@@ -10,19 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306164224) do
+ActiveRecord::Schema.define(version: 20170327152000) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
-    t.string   "goals"
+    t.text     "goals"
     t.string   "ages"
     t.string   "act_kind"
-    t.string   "act_description"
-    t.string   "openning_game"
-    t.string   "methods"
-    t.string   "accessories"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "act_description"
+    t.text     "openning_game"
+    t.text     "methods"
+    t.text     "accessories"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "subscribes", force: :cascade do |t|

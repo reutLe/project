@@ -26,5 +26,5 @@
   <%= @user.days_in_week %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> 
+<%= link_to 'Admin access', users_path if @user.admin? %>
