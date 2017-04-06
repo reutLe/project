@@ -28,9 +28,10 @@ class SubscribesController < ApplicationController
   #  subscribe_params[:activity_id] = Activity.find_by_name(subscribe_params[:activity_id]).id
   #  subscribe_params[:user_id] = User.find_by_username(subscribe_params[:user_id]).id
     @subscribe = Subscribe.new(subscribe_params)
-    
+
     respond_to do |format|
       if @subscribe.save
+        UserMailer.welcome_email(@subscribe).deliver!
         format.html { redirect_to @subscribe, notice: 'Subscribe was successfully created.' }
         format.json { render :show, status: :created, location: @subscribe }
       else

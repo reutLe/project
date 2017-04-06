@@ -4,12 +4,23 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    search_query = params[:search]
+    @activities = search_query.present? ? Activity.where("name LIKE ? OR
+     act_description LIKE ? OR
+      act_kind LIKE ? AND ages LIKE ?",
+       "%#{search_query}%", "%#{search_query}%", "%#{search_query}%" "%#{search_query}%",) :  Activity.all
   end
 
   # GET /activities/1
   # GET /activities/1.json
   def show
+  end
+
+  def search
+    search_query = params[:search]
+    results = []
+    Activity.where("name LIKE ? OR act_description LIKE ? OR act_kind LIKE ? AND ages LIKE ?", "%#{search_query}%", "%#{search_query}%", "%#{search_query}%")
+    @activities = Activity.all
   end
 
   # GET /activities/new

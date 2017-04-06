@@ -2,6 +2,15 @@
 
 <h1>Activities</h1>
 
+<%= form_tag activities_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= select_tag :search_ages, options_for_select(["9-12", "13-14", "15-16", "17-18"], params[:search])  %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+
+<% end %>
+
 <table>
   <thead>
     <tr>
