@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
     @activities = search_query.present? ? Activity.where("name LIKE ? OR
      act_description LIKE ? OR
       act_kind LIKE ? AND ages LIKE ?",
-       "%#{search_query}%", "%#{search_query}%", "%#{search_query}%" "%#{search_query}%",) :  Activity.all
+       "%#{search_query}%", "%#{search_query}%", "%#{search_query}%", "%#{search_query}%") :  Activity.all
   end
 
   # GET /activities/1
@@ -37,7 +37,6 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user_id = session[:login]
-    binding.pry
     respond_to do |format|
       if @activity.save
         format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
