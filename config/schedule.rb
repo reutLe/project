@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every 1.day, :at => '4:23 pm' do
-  runner "rake:my_namespace"
+every 1.day, :at => '4:33 pm' do
+  runner "rake mailer:welcome"
 end

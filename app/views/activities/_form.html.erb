@@ -1,3 +1,5 @@
+<div id="content">
+				<div class="inner">
 <%= form_for @activity, html: { multipart: true } do |f| %>
   <% if activity.errors.any? %>
     <div id="error_explanation">
@@ -35,8 +37,8 @@
                                  ],{ :prompt => "Suitable for all ages"},
                                    { :multiple => true, :size => 4 },
                                  ) %>
-  </div>
 
+  </div>
   <div class="field">
     <%= f.label :act_kind %>
     <%= f.text_field :act_kind %>
@@ -66,3 +68,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+</div>

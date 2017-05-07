@@ -1,3 +1,6 @@
+
+<div id="content">
+				<div class="inner">
 <h1> Profile Page </h1>
 <p id="notice"><%= notice %></p>
 
@@ -26,5 +29,7 @@
   <%= @user.days_in_week %>
 </p>
 
-<%= link_to 'Edit Profile', edit_user_path(@user) %> 
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
 <%= link_to 'Admin access', users_path if @user.admin? %>
+</div>
+</div>
