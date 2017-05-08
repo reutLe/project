@@ -49,9 +49,11 @@
   <strong>Accessories:</strong>
   <%= @activity.accessories %>
 </p>
-
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
-<%= link_to 'subscribe', new_subscribe_path(:activtiy => @activity.id, :user => session[:login]) %>
+<a href="<%= edit_activity_path(@activity) %>" class="button previous">Edit</a>
+<!-- <%= link_to 'Edit', edit_activity_path(@activity) %> |-->
+<a href="<%= activities_path %>" class="button previous">Back</a>
+<!--<%= link_to 'Back', activities_path %>-->
+<a href="<%=  new_subscribe_path(:activtiy => @activity.id, :user => session[:login]) %>" class="button previous">subscribe</a>
+<!--<%= link_to 'subscribe', new_subscribe_path(:activtiy => @activity.id, :user => session[:login]) %>-->
 </div>
 </div>

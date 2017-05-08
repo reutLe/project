@@ -2,13 +2,14 @@
 <div id="content" style="min-height: 2019px;">
 				<div class="inner">
   <p id="notice"><%= notice %></p>
+  <!--<%= link_to 'New Activity', new_activity_path %>-->
 
   <% @activities.each do |activity| %>
     <tr>
       <article class="box post post-excerpt">
 
       	<header>
-      		<h2><a href="<%= activity.name %>"></a></h2>
+      		<h2><a href="#"><%= activity.name %></a></h2>
       		<p><%= activity.act_kind %></p>
       	</header>
       	<div class="info">
@@ -23,9 +24,20 @@
           <strong>act description:</strong>
           <%= activity.act_description %>
         </p>
-				<td><%= link_to 'Show the full activity', activity %></td>
+				<!--<td><%= link_to 'Show the full activity', activity %></td>-->
+				<a href="<%= activity_path(activity) %>" class="button previous">Show the full activity</a>
+				<!--condition
+				 if @user.username
+				 if @activity.user.username == @user.username
 
-				<td>|<%= link_to 'Edit', edit_activity_path(activity) %>|</td>
+				 end
+				 end
+									-->
+				<a href="<%= edit_activity_path(activity) %>" class="button previous">Edit</a>
+
+
+
+			<!--	<td>|<%= link_to 'Edit', edit_activity_path(activity) %>|</td>-->
 				<td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<% end %>
 			</article>
@@ -33,6 +45,6 @@
 
   <% end %>
 
-  <%= link_to 'New Activity', new_activity_path %>
+
 </div>
 </div>
