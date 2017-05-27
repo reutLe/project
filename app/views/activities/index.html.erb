@@ -26,19 +26,15 @@
         </p>
 				<!--<td><%= link_to 'Show the full activity', activity %></td>-->
 				<a href="<%= activity_path(activity) %>" class="button previous">Show the full activity</a>
-				<!--condition
-				 if @user.username
-				 if @activity.user.username == @user.username
+				<!--condition-->
 
-				 end
-				 end
-									-->
-				<a href="<%= edit_activity_path(activity) %>" class="button previous">Edit</a>
+				 <% if activity.user.id == session[:login] %>
+				 <a href="<%= edit_activity_path(activity) %>" class="button previous">Edit</a>
+		 		 <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %></td>
 
+				 <% end %>
 
 
-			<!--	<td>|<%= link_to 'Edit', edit_activity_path(activity) %>|</td>-->
-				<td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<% end %>
 			</article>
     </tr>

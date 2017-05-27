@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def signOut
+    session[:login] = nil
+    redirect_to login_users_path
+  end
+
   # GET /users/1/edit
   def edit
   end

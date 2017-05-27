@@ -25,7 +25,17 @@
 
 				<!-- Logo -->
 					<h1 id="logo"><a href="#">MyBuild</a></h1>
-          <%= link_to 'sign in',new_user_path%>
+          <nav id="nav">
+    			  <ul>
+              <% if session[:login].present?%>
+              <h2>Hey <%= User.find(session[:login]).username%>,</h2>
+              <h2>Welcome to MyBuild</h2>
+              <%= link_to 'sign out','/users/signOut' %>
+              <% else %>
+              <%= link_to 'sign in',new_user_path%>
+            </ul>
+          </nav>
+          <% end %>
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
