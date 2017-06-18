@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   before_save :hash_password
   has_many :activities , through:  :subscribes
+  has_many :likes
   validates :username, :password, :presence => true
   VAILD_EMAIL_REGEX = /\A[\w+\-,]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, :presence => true, format: {with: VAILD_EMAIL_REGEX, message: "please enter email address",}

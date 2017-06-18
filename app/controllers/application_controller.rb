@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :login?, :except => [:login, new]
+  before_action :login?, :except => [:login, :new, :create]
   protect_from_forgery with: :exception
 
   def login?

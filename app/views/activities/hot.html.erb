@@ -12,9 +12,9 @@
       		<h2><a href="#"><%= activity.name %></a></h2>
 					<p><%= activity.likes.size%> LIKES</p>
       		<p><%= activity.act_kind %></p>
-					<div >
-	      		Suitable for <%= ((activity.ages).map(&:inspect).join(' ')).gsub! '"', '' %>
-	      	</div>
+					<div>
+						Suitable for <%= ((activity.ages).map(&:inspect).join(' ')).gsub! '"', '' %>
+					</div>
       	</header>
       	<a href="#" class="image featured"><img src="<%= activity.image %>" alt="" /></a>
       	<p>

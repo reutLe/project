@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /activities
   # GET /activities.json
@@ -28,8 +28,17 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def like
+     @activity.like(User.find(session[:login]))
+      redirect_to @activity, notice: 'Liked !'
+  end
+
   # GET /activities/1/edit
   def edit
+  end
+
+  def hot
+    @activities = Activity.joins(:likes).group('activity_id').having('count(activity_id) > 2')
   end
 
   # POST /activities
